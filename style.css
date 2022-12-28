@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 500px;
+}
+
+.cube {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform: rotateY(-25deg);
+    transform-style: preserve-3d;
+}
+
+.side {
+    border: 2px solid #000;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    color:#fff;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: #fff;
+}
+
+.front {
+    transform: translateZ(150px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.left {
+   
+    transform:rotateY(-90deg) translateZ(150px);
+}
+.right {
+    transform:rotateY(90deg) translateZ(150px);
+}
+
+.top {
+    transform:rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+    transform:rotateX(-90deg) translateZ(150px);
+}
+
+.cube:hover {
+    cursor: pointer;
+}
+
+.dice {
+    list-style: none;
+    display: inline-flex;
+    vertical-align: top;
+    padding: 40px;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.dicePoint::before {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.diceOne {
+    justify-content: center;
+    align-items: center;
+}
+
+.diceTwo {
+    justify-content: space-between;
+}
+
+.diceTwo .dicePoint:nth-child(1) {
+    align-self: flex-end;
+}
+
+.diceThree {
+    justify-content: space-between;
+}
+
+.diceThree .dicePoint:nth-child(1) {
+    align-self: flex-end;
+}
+
+.diceThree .dicePoint:nth-child(2) {
+    align-self: center;
+}
+
+.diceFour {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.diceFour .dicePoint {
+    width: 50%;
+}
+
+.diceFour .dicePoint:nth-child(even) {
+    text-align: right;
+}
+
+.diceFive {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.diceFive .dicePoint:nth-child(3) {
+    width: 100%;
+    text-align: center;
+}
+
+.diceSix {
+    flex-flow: wrap column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+@media screen and (max-width: 576px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #333;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 230px;
+    }
+
+    .cube {
+        width: 140px;
+        height: 140px;
+        position: relative;
+        transform: rotateY(-25deg);
+        transform-style: preserve-3d;
+    }
+
+    .side {
+        border: 0.5px solid #000;
+        width: 100%;
+        height: 100%;
+        font-size: 23px;
+        color:#fff;
+        position: absolute;
+        backface-visibility: hidden;
+        background-color: #fff;
+    }
+
+    .front {
+        transform: translateZ(70px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(70px);
+    }
+
+    .left {
+        transform:rotateY(-90deg) translateZ(70px);
+    }
+
+    .right {
+        transform:rotateY(90deg) translateZ(70px);
+    }
+
+    .top {
+        transform:rotateX(90deg) translateZ(70px);
+    }
+
+    .bottom {
+        transform:rotateX(-90deg) translateZ(70px);
+    }
+
+    .cube:hover {
+        cursor: pointer;
+    }
+    
+    .dice {
+        list-style: none;
+        display: inline-flex;
+        vertical-align: top;
+        padding: 18px;
+        margin: 2px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .dicePoint::before {
+        content: '';
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-color: #000;
+        border-radius: 50%;
+    }
+
+    .diceOne {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .diceTwo {
+        justify-content: space-between;
+    }
+
+    .diceTwo .dicePoint:nth-child(1) {
+        align-self: flex-end;
+    }
+
+    .diceThree {
+        justify-content: space-between;
+    }
+
+    .diceThree .dicePoint:nth-child(1) {
+        align-self: flex-end;
+    }
+    
+    .diceThree .dicePoint:nth-child(2) {
+        align-self: center;
+    }
+
+    .diceFour {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    .diceFour .dicePoint {
+        width: 50%;
+    }
+
+    .diceFour .dicePoint:nth-child(even) {
+        text-align: right;
+    }
+
+    .diceFive {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+    
+    .diceFive .dicePoint:nth-child(3) {
+        width: 100%;
+        text-align: center;
+    }
+
+    .diceSix {
+        flex-flow: wrap column;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+}
